@@ -9,6 +9,8 @@ urlpatterns = [
     path("api/auth/", include("djoser.urls.jwt")),
     path("api/profile/", include("apps.profiles.urls")),
     path("api/products/", include("apps.products.urls")),
+    path("api/ratings/", include("apps.ratings.urls")),
+    path("api/enquiries/", include("apps.enquiries.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = "Last Shop Admin"
