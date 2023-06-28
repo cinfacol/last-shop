@@ -38,7 +38,7 @@ class ProductFilter(django_filters.FilterSet):
         fields = ["advert_type", "product_type", "price"]
 
 
-class ListAllPropertiesAPIView(generics.ListAPIView):
+class ListAllProductsAPIView(generics.ListAPIView):
     serializer_class = ProductSerializer
     queryset = Product.objects.all().order_by("-created_at")
     pagination_class = ProductPagination
@@ -53,7 +53,7 @@ class ListAllPropertiesAPIView(generics.ListAPIView):
     ordering_fields = ["created_at"]
 
 
-class ListAgentsPropertiesAPIView(generics.ListAPIView):
+class ListAgentsProductsAPIView(generics.ListAPIView):
     serializer_class = ProductSerializer
     pagination_class = ProductPagination
     filter_backends = [
