@@ -14,19 +14,6 @@ class AgentListAPIView(generics.ListAPIView):
     serializer_class = ProfileSerializer
 
 
-"""
-    from rest_framework import api_view, permissions
-
-    @api_view(["GET"])
-    @permission_classes((permissions.IsAuthenticated))
-    def get_all_agents(request):
-        agents = Profile.objects.filter(is_agent=True)
-        serializer=ProfileSerializer(agents, many=True)
-        name_spaced_response={"agents": serializer.data}
-        return Response(name_spaced_response,status=status.HTTP_200_OK)
-"""
-
-
 class TopAgentsListAPIView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
     queryset = Profile.objects.filter(top_agent=True)

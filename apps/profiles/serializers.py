@@ -1,4 +1,4 @@
-""" from django_countries.serializer_fields import CountryField
+from django_countries.serializer_fields import CountryField
 from rest_framework import fields, serializers
 
 from apps.ratings.serializers import RatingSerializer
@@ -78,4 +78,4 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
         representation = super().to_representation(instance)
         if instance.top_agent:
             representation["top_agent"] = True
-        return representation """
+        return representation
