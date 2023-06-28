@@ -17,6 +17,10 @@ psycopg2-binary = "*"
 flake8 = "*"
 black = "*"
 isort = "*"
+djoser = "*"
+djangorestframework-simplejwt = "*"
+pyjwt = "*"
+django-smtp-ssl = "*"
 
 [dev-packages]
 

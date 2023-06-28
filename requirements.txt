@@ -5,6 +5,7 @@ django-filter
 django-autoslug
 django-countries
 django-phonenumber-field
+django-smtp-ssl
 
 pillow
 phonenumbers
@@ -12,3 +13,6 @@ psycopg2-binary
 flake8
 black
 isort
+djoser
+djangorestframework-simplejwt
+pyJWT
