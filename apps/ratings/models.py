@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 from apps.common.models import TimeStampedUUIDModel
 from apps.profiles.models import Profile
-from config.settings.base import AUTH_USER_MODEL
+from config.settings import AUTH_USER_MODEL
 
 
 class Rating(TimeStampedUUIDModel):

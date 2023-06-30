@@ -1,10 +1,14 @@
-from pathlib import Path
 from datetime import timedelta
+from django.utils.log import DEFAULT_LOGGING
+from pathlib import Path
+
+import logging
+import logging.config
 import environ
 
 env = environ.Env(DEBUG=(bool, False))
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 environ.Env.read_env(BASE_DIR / ".env")
 
@@ -74,6 +78,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
+DATABASES = {
+    "default": {
+        "ENGINE": env("POSTGRES_ENGINE"),
+        "NAME": env("POSTGRES_DB"),
+        "USER": env("POSTGRES_USER"),
+        "PASSWORD": env("POSTGRES_PASSWORD"),
+        "HOST": env("PG_HOST"),
+        "PORT": env("PG_PORT"),
+    }
+}
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -116,7 +131,6 @@ REST_FRAMEWORK = {
     )
 }
 
-
 SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": (
         "Bearer",
@@ -149,10 +163,17 @@ DJOSER = {
     },
 }
 
-import logging
-import logging.config
-
-from django.utils.log import DEFAULT_LOGGING
+# EMAIL_BACKEND = "djcelery_email.backends.CeleryEmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_USE_TLS = True
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = "info@last-shop.com"
+DOMAIN = env("DOMAIN")
+SITE_NAME = "Last Shop"
 
 logger = logging.getLogger(__name__)
 
