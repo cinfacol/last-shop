@@ -20,6 +20,13 @@ isort = "*"
 djoser = "*"
 djangorestframework-simplejwt = "*"
 pyjwt = "*"
+redis = "*"
+celery = "*"
+flower = "*"
+django-celery-email = "*"
+argh = "*"
+pyyaml = "*"
+watchdog = "*"
 
 [dev-packages]
 

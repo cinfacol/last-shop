@@ -20,12 +20,13 @@ ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(" ")
 
 
 DJANGO_APPS = [
+    "django.contrib.contenttypes",
     "django.contrib.admin",
     "django.contrib.auth",
-    "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
 ]
 
 THIRD_PARTY_APPS = [
@@ -35,6 +36,7 @@ THIRD_PARTY_APPS = [
     "phonenumber_field",
     "djoser",
     "rest_framework_simplejwt",
+    "djcelery_email",
 ]
 
 LOCAL_APPS = [
@@ -47,6 +49,8 @@ LOCAL_APPS = [
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -88,6 +92,10 @@ DATABASES = {
         "PORT": env("PG_PORT"),
     }
 }
+
+CELERY_BROKER_URL = env("CELERY_BROKER")
+CELERY_RESULT_BACKEND = env("CELERY_BACKEND")
+CELERY_TIMEZONE = "America/Bogota"
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
@@ -178,8 +186,8 @@ DJOSER = {
     },
 }
 
-# EMAIL_BACKEND = "djcelery_email.backends.CeleryEmailBackend"
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "djcelery_email.backends.CeleryEmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_USE_TLS = True

@@ -15,3 +15,10 @@ black
 isort
 djoser
 pyJWT
+redis
+celery
+flower
+django-celery-email
+argh
+PyYAML
+watchdog
