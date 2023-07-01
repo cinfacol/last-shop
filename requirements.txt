@@ -1,11 +1,11 @@
 Django
 djangorestframework
+djangorestframework-simplejwt
 django-environ
 django-filter
 django-autoslug
 django-countries
 django-phonenumber-field
-django-smtp-ssl
 
 pillow
 phonenumbers
@@ -14,5 +14,4 @@ flake8
 black
 isort
 djoser
-djangorestframework-simplejwt
 pyJWT

@@ -20,7 +20,6 @@ isort = "*"
 djoser = "*"
 djangorestframework-simplejwt = "*"
 pyjwt = "*"
-django-smtp-ssl = "*"
 
 [dev-packages]
 
