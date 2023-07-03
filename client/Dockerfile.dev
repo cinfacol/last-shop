@@ -1,0 +1,14 @@
+FROM node:18.16.1-alpine3.18
+
+LABEL version="1.0"
+LABEL desciption="Next Frontend for Last Shop API"
+
+WORKDIR /app
+
+COPY ./package*.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "dev"]
