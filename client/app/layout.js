@@ -1,7 +1,7 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Providers } from './redux/provider'
+import Navbar from './components/navigations/Navbar'
+import Footer from './components/navigations/Footer'
 
 export const metadata = {
   title: 'Last Shop App',
@@ -10,8 +10,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="es">
+      <body>
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
+      </body>
     </html>
   )
 }
