@@ -1,7 +1,9 @@
+"use_client";
+
 import './globals.css'
 import { Providers } from './redux/provider'
-import Navbar from './components/navigations/Navbar'
-import Footer from './components/navigations/Footer'
+import Navbar from '@/components/navigations/Navbar'
+import Footer from '@/components/navigations/Footer'
 
 export const metadata = {
   title: 'Last Shop App',
