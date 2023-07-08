@@ -1,9 +1,13 @@
-import Banner from '../components/Banner'
+import { Banner, ProductsArrival, ProductsSold } from "@/components";
 
 export default function Home() {
   return (
-    <div>
+    <main className="overflow-hidden">
       <Banner />
-    </div>
+      
+      <ProductsArrival />
+      
+      <ProductsSold />
+    </main>
   )
 }
