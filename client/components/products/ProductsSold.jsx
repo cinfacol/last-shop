@@ -1,3 +1,5 @@
+"use_client";
+
 import React from 'react'
 
 const ProductsSold = () => {

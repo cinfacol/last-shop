@@ -1,3 +1,5 @@
+"use_client";
+
 import { Banner, ProductsArrival, ProductsSold } from "@/components";
 
 export default function Home() {
