@@ -1,7 +1,3 @@
-"use_client";
-
-import React from 'react'
-
 const ProductsSold = () => {
   return (
     <div className='mt-12 padding-x padding-y max-width' id='discover'>

@@ -1,16 +1,10 @@
-"use_client";
-
-// import React, { createContext } from "react";
 import Link from "next/link";
-import { useSelector, useDispatch } from "react-redux";
-import { Login } from "@/redux/features/auth/authService";
 import { ShoppingCartIcon, HeartIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { CustomButton, Search } from "..";
 
  const Navbar = () => {
   const handleScroll = '';
-  // const dispatch = useDispatch();
 
   return (
     <header className="bg-white py-2 border-b">

@@ -1,6 +1,5 @@
 import { Footer, Navbar } from '@/components';
-import './globals.css'
-import { Providers } from '../redux/provider';
+import './globals.css';
 
 export const metadata = {
   title: 'Last Shop App',
@@ -11,11 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className='relative'>
-        <Providers>
-          <Navbar />
-          {children}
-          <Footer />
-        </Providers>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   )

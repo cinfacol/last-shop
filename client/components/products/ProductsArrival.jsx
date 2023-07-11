@@ -1,6 +1,3 @@
-"use_client";
-
-import { useDispatch } from "react-redux";
 import Link from "next/link";
 
 const ProductsArrival = () => {
