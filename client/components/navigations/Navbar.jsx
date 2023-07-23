@@ -4,7 +4,7 @@ import Image from "next/image";
 import { CustomButton, Search } from "..";
 
  const Navbar = () => {
-  const handleScroll = '';
+  // const handleScroll = '';
 
   return (
     <header className="bg-white py-2 border-b">
@@ -40,7 +40,7 @@ import { CustomButton, Search } from "..";
               btnType="button"
               containerStyles="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
               leftIcon="/user.svg"
-              handleClick={handleScroll}
+              handleClick={console.log('clicked')}
             />
 
             <Link href="/me">
