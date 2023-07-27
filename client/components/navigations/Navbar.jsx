@@ -1,23 +1,11 @@
-"use_client";
-
 import Link from "next/link";
-// import { useSelector, useDispatch } from "react-redux";
 import { ShoppingCartIcon, HeartIcon } from "@heroicons/react/24/solid";
-// import { GetProducts } from "@/app/redux/features/products/productsService";
 import Image from "next/image";
 import { CustomButton, Search } from "..";
-// import { useEffect } from "react";
 
  const Navbar = () => {
-  const handleScroll = ''
-/*  const dispatch = useDispatch();
+  // const handleScroll = '';
 
-  useEffect(() => {
-    dispatch(GetProducts());
-  }, []) */
-
-  // const products = useSelector(state => state.products);
-  // console.log('productos', products);
   return (
     <header className="bg-white py-2 border-b">
       <nav className="container max-w-screen-xl mx-auto px-4">
@@ -51,7 +39,8 @@ import { CustomButton, Search } from "..";
               title="Sign in"
               btnType="button"
               containerStyles="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
-              handleClick={handleScroll}
+              leftIcon="/user.svg"
+              handleClick={console.log('clicked')}
             />
 
             <Link href="/me">
